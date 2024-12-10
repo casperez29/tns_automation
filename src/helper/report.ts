@@ -13,7 +13,7 @@ report.generate({
         },
         device: "Casius - PC",
         platform: {
-            name: "Mac M1",
+            name: "Windows",
             version: "14.1",
         },
     },

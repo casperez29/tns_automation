@@ -8,7 +8,7 @@ TypeScript is a powerful superset of JavaScript that adds optional static typing
 ### Setup:
 
 1. Install latest version of [NodeJS](https://nodejs.org/en/download/prebuilt-installer)
-2. Clone or download the project
+2. Clone or download the project from [GitHub Repository](https://github.com/casperez29/talisman)
 3. Extract and open in the `VS-Code`
 4. `npm i` to install the dependencies
 5. `npx playwright install` to install the browsers
@@ -16,11 +16,11 @@ TypeScript is a powerful superset of JavaScript that adds optional static typing
 ```
 npm test
 ```
-7. Use tags to run a specific feature file. Run in the command line:
+7. Use tags to run a `specific feature file`. Run in the command line:
 ```
 npm run feature "@users"
 ```
-8. To run a specific scenario, run in the command line:
+8. To run a `specific scenario`, run in the command line:
 ```
 npm run scenario "Create User with Required fields"
 ```
@@ -38,8 +38,17 @@ npm run scenario "Create User with Required fields"
 3. Screenshots of failure
 
 ## Sample report
-![alt text](image-3.png)![image](https://github.com/ortoniKC/Playwright_Cucumber_TS/assets/58769833/da2d9f5a-85e7-4695-8ce2-3378b692afc4)![alt text](image.png)![alt text](image-2.png)
+![alt text](image-3.png)![alt text](image.png)![alt text](image-2.png)
 
+## Extensions (VS-Code Marketplace)
+1. Cucumber
+2. Cucumber (Gherkin) Full Support
+3. ESLint
+4. Playwright Test for VSCode
+5. Prettier - Code formatter
+6. Code Spell Checker
+7. BDD Goto Step
+8. BDD - Feature-Editor
 
 ### Folder structure
 0. `src\pages` -> All the page (UI screen)
@@ -47,13 +56,9 @@ npm run scenario "Create User with Required fields"
 2. `src\test\steps` -> Your step definitions goes here
 3. `src\hooks\hooks.ts` -> Browser setup and teardown logic
 4. `src\hooks\pageFixture.ts` -> Simple way to share the page objects to steps
-5. `src\helper\env` -> Multiple environments are handled
-6. `src\helper\types` -> To get environment code suggestions
-7. `src\helper\report` -> To generate the report
-8. `config/cucumber.js` -> One file to do all the magic
-9. `package.json` -> Contains all the dependencies
-10. `src\helper\auth` -> Storage state (Auth file)
-11. `src\helper\util` -> Read test data from json & logger
+5. `src\helper\report` -> To generate the report
+6. `config/cucumber.js` -> One file to do all the magic
+7. `package.json` -> Contains all the dependencies
 
 ## Tutorials
 1. Learn Playwright - [Playwright - TS](https://youtube.com/playlist?list=PL699Xf-_ilW7EyC6lMuU4jelKemmS6KgD)
