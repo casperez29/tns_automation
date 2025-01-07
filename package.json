@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js test || true",
-    "scenario": "npx cucumber-js src/test/features/**/*.feature --name",
-    "feature": "npx cucumber-js src/test/features/**/*.feature --tags",
+    "scenario": "npx cucumber-js src/test/features/**/**/*.feature --name",
+    "feature": "npx cucumber-js src/test/features/**/**/*.feature --tags",
     "posttest": "npx ts-node src/helper/report.ts"
   },
   "keywords": [

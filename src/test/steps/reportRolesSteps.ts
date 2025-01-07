@@ -91,3 +91,26 @@ Given('User validates Report Management table,search,add button is displayed', a
     await locators.pageFixtures.page.getByText('Add', { exact: true });
     console.log("Add Button is displayed");
 })
+
+Then("User validates Report Role error validation {string} {string}", async function (id, name) {
+    const errorMessagesLocator = locators.pageFixtures.page.locator( 'sp-help-text[slot="negative-help-text"] .validation-message');
+
+    const expectedMessages = [id, name];
+    for (const message of expectedMessages) {
+      const locator = locators.pageFixtures.page.locator(
+        `sp-help-text:has-text("${message}")`
+      );
+
+      if (await locator.isVisible()) {
+        console.log(`Validation passed: Found "${message}"`);
+      } else {
+        throw new Error(`Validation failed: "${message}" not found`);
+      }
+    }
+  }
+)
+
+Then('User clicks on Cancel button', async function (){
+    await locators.pageFixtures.page.waitForTimeout(1000);
+    await locators.pageFixtures.page.locator(locators.cancelButton).click();
+})

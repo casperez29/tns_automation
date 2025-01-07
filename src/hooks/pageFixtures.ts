@@ -59,3 +59,4 @@ export const descriptionField = 'input[aria-label="Description"]';
 export const nameColumn = 'div[data-column="name"]';
 export const errorMessage = 'sp-help-text[slot="negative-help-text"] .validation-message';
 export const userIdColumn = 'div[data-column="id"]';
+export const cancelButton = '//sp-button[text()="Cancel"]';
