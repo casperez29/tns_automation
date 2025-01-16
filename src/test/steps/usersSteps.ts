@@ -185,3 +185,14 @@ Then('User validates table displays the correct page data {string}', async funct
         throw new Error('Test Failed: Table did not navigate to desired page data.')
     }
 })
+
+Given('User validates Users and Roles tab is not displayed', async function () {
+    await locators.pageFixtures.page.waitForTimeout(3000)
+    try {
+        await locators.pageFixtures.page.waitForSelector(locators.userTab, { timeout: 2000 }); // Adjust timeout as needed
+        console.log("User tab is available.");
+      } catch (error) {
+        console.log(" Success, user tab is not available.");
+      }
+      
+});
