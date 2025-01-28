@@ -35,10 +35,11 @@ After(async function({pickle, result}){
 
 });
 
-// AfterStep( async function ({ pickle, result}) {
-//     const img = await pageFixtures.page.screenshot({ path: `./test-results/screenshots/${pickle.name}.png`, type: "png"})
-//     await this.attach(img, "image/png");
-// });
+AfterStep( async function ({ pickle, result}) {
+    const img = await pageFixtures.page.screenshot({ path: `./test-results/screenshots/${pickle.name}.png`, type: "png"})
+    await this.attach(img, "image/png");
+    await pageFixtures.page.waitForTimeout(1500)
+});
 
 AfterAll(async function (){
     await browser.close();
