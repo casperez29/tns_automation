@@ -12,6 +12,10 @@ Given('User navigates to the application', async function () {
     await locators.pageFixtures.page.goto(locators.talismanPortal);
 });
 
+Given('User navigates to the Mercury portal', async function () {
+    await locators.pageFixtures.page.goto(locators.mercuryPortal);
+});
+
 Given ('User clicks on Advanced button', async function (){
     await locators.pageFixtures.page.locator("id=details-button").click();
 })

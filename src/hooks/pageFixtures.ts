@@ -7,6 +7,7 @@ export const pageFixtures = {
 
 // Login //
 export const talismanPortal = "https://tns.qa.cloud.apps.nm1.nm1.tambla.net/";
+export const mercuryPortal = "https://mercury.qa.tns.apps.nm1.nm1.tambla.net/wfm"
 export const usernameField = "id=username";
 export const passwordField = "id=password";
 export const loginButton = "id=kc-login"

@@ -4,7 +4,7 @@
             "snippetInterface": "async-wait"
         },
         "paths": [
-            "src/test/features/**/*.feature"
+            "src/test/features_mercury/**/*.feature"
         ],
         "dryRun": false,
         "require": [
