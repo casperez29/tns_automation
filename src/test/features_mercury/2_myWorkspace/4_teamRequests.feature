@@ -7,10 +7,10 @@ Feature: Team Requests
         And User enter the password as "20017289"
         When User click on the login button
         Then Login should be successful
-
-    Scenario Outline: My Team Requests - Landing Page
         And User clicks on the navigation menu
         When User clicks on My workspace tab
+
+    Scenario Outline: My Team Requests - Landing Page
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         Then User validates My Requests landing page
@@ -20,8 +20,6 @@ Feature: Team Requests
             | My team Requests |
 
     Scenario Outline: My Team Requests - Create Leave Pop-up
-        And User clicks on the navigation menu
-        When User clicks on My workspace tab
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         And User clicks on the create leave button
@@ -36,8 +34,6 @@ Feature: Team Requests
             | My team requests |
 
     Scenario Outline: My team requests - Go to leave
-        And User clicks on the navigation menu
-        When User clicks on My workspace tab
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         And User clicks on the Go to leave button
@@ -48,8 +44,6 @@ Feature: Team Requests
             | My team requests |
 
     Scenario Outline: Team Request Pending Approvals - Redirect to Leave (Status: Pending)
-        And User clicks on the navigation menu
-        When User clicks on My workspace tab
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         When User clicks on Pending counter
@@ -61,8 +55,6 @@ Feature: Team Requests
 
 
     Scenario Outline: Team Request Approved Leaves - Redirect to Leave (Status: Approved)
-        And User clicks on the navigation menu
-        When User clicks on My workspace tab
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         When User clicks on Approved counter
@@ -73,8 +65,6 @@ Feature: Team Requests
             | My team requests |
 
     Scenario Outline: Team Requests Denied Leaves - Redirect to Leave (Status: Denied)
-        And User clicks on the navigation menu
-        When User clicks on My workspace tab
         And User clicks on "<workspace>" workspace tab
         When User should be redirected to "<workspace>" tab
         When User clicks on Denied counter
@@ -83,3 +73,19 @@ Feature: Team Requests
         Examples:
             | workspace        |
             | My team requests |
+
+    Scenario Outline: Create Leave Request
+        And User clicks on "<workspace>" workspace tab
+        And User clicks on the create leave button
+        And the search Person pop-up dialog box is displayed
+        When User inputs a value in the search member field "<personnelID>"
+        # When User clicks on the Personnel ID "<personnelID>"
+        # And User clicks on Add leave day button
+        # And User selects leave "<leave>" on the leave type field
+        # And User clicks on Add button
+        # When User clicks on Submit button
+        # Then User is redirected to Leave landing page
+
+        Examples:
+            | workspace        | leave  | personnelID |
+            | My team requests | ALEAVE | 00916046    |

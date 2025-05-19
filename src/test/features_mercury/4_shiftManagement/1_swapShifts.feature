@@ -55,3 +55,18 @@ Feature: Shift Management - Swap Shifts
         Examples:
             | personnelID |
             | 20017289    |
+
+    Scenario Outline: Sort and Filter: Add Filter
+        And User clicks on the navigation menu
+        When User clicks on the Shift management dropdown menu list
+        And User clicks on Swap shifts tab
+        When User clicks on the Sort and Filter button
+        And User clicks on Add filter button
+        And User selects Status option
+        And User clicks on Status dropdown list field
+        When User selects filter "<filter>" option
+        Then User validates swap shift request table is displaying the filtered data
+
+        Examples:
+            | filter |
+            | Denied |

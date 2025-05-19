@@ -149,3 +149,46 @@ Then('User validates Menu settings landing page', async function (){
 });
 
 
+Given('User clicks on Edit button for Person {string}', async function (person){
+  // Define the dynamic ID
+  const personId = person; // Change dynamically as needed
+
+  // Locate the specific person's row
+  const personRow = locators.pageFixtures.page.locator(
+    `//span[text()="${personId}"]/ancestor::div[contains(@class, "mat-list-item-content")]`
+  );
+
+  // Ensure the row is visible and wait for it
+  await personRow.waitFor({ state: "visible", timeout: 10000 });
+
+  // Locate the edit button within the same row
+  const editButton = personRow.locator(`button:has(mat-icon:text("edit"))`);
+
+  // Scroll into view (in case it's hidden)
+  await editButton.scrollIntoViewIfNeeded();
+
+  // Ensure the button is visible and clickable
+  await editButton.waitFor({ state: "visible", timeout: 10000 });
+
+  // Click the edit button
+  await editButton.click();
+})
+
+Given('User ticks the checkbox {string}', async function (colours: string){
+
+  const label = colours; // Make this dynamic
+
+  // Locate the checkbox dynamically
+  const checkbox = locators.pageFixtures.page
+    .locator(`.mat-list-item-content:has-text("${label}") mat-checkbox`)
+    .first();
+  const checkboxInput = checkbox.locator("input"); // Target the actual checkbox input element
+
+  // Check if it's already checked
+  const isChecked = await checkboxInput.isChecked();
+
+  if (!isChecked) {
+    await checkbox.click(); // Click to check it
+  }
+
+})

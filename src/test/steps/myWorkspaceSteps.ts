@@ -36,7 +36,7 @@ When("User clicks on {string} workspace tab", async function (tab: string) {
     // Define tab selectors
     const tabs: { [key: string]: string } = {
       "My Requests": 'div[role="tab"]:has-text("My requests")',
-      "My Team Requests": 'div[role="tab"]:has-text("My team requests")',
+      "My team requests": 'div[role="tab"]:has-text("My team requests")',
       "My Approvals": 'div[role="tab"]:has-text("My approvals")',
     };
   
@@ -57,19 +57,6 @@ When("User clicks on {string} workspace tab", async function (tab: string) {
     await locators.pageFixtures.page.click(tabSelector);
     console.log(`✅ ${tab} tab clicked`);
   });
-  
-
-// When('User clicks on {string} workspace tab', async function (workspace){
-//     if (workspace == "My Request"){
-//         await locators.pageFixtures.page.click()
-//     }
-//     else if (workspace == "My Team Request"){
-
-//     }
-//     else if (workspace == "My Approvals"){
-
-//     }
-// });
 
 Then('User redirects to the My Workspace dashboard', async function (){
     // Wait for the "My requests" tab to be visible
